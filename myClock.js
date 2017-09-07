@@ -1,4 +1,5 @@
-var session="session", breakTime = 5, sessionTime = 25,isRunning=false, currentTime=0,currentMinutes=0,currentSeconds=0;
+var session="session", breakTime = 5, sessionTime = 25,isRunning=false, currentTime=0,currentMinutes=0,currentSeconds=0, incSession, decSession;
+
 
 
 var soundBite = new Audio('https://www.dropbox.com/pri/get/bell.mp3?_subject_uid=637868302&w=AAAJfzwriOAieAFnLXN4Z_5uEBAEEYX2hEyU55vAVmrv_A');
@@ -8,11 +9,11 @@ soundBite.loop = false;
 $(document).ready(function(){
   document.getElementById("workTime").innerHTML=sessionTime;
   document.getElementById("breakTime").innerHTML=breakTime;
-  var incSession = document.getElementById("workUp");
-  var decSession = document.getElementById("workDown");
+	incSession = document.getElementById("workUp");
+  decSession = document.getElementById("workDown");
   clear();
   resetTimer(session,"session");
-});
+
 
 incSession.onclick=function(){
  if(!isRunning&&sessionTime<60){
@@ -159,3 +160,4 @@ function clear(){
   }
 }; 
 
+});
