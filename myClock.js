@@ -12,7 +12,7 @@ $(document).ready(function(){
   var decSession = document.getElementById("workDown");
   clear();
   resetTimer(session,"session");
-
+});
 
 incSession.onclick=function(){
  if(!isRunning&&sessionTime<60){
@@ -66,7 +66,7 @@ document.getElementById("clear").onclick=function(){
 }
 
 document.getElementById("stop").onclick=function(){
-  if(isRunning=true){
+  if(isRunning){
     isRunning= false;
     stopTimer()
   }
@@ -76,8 +76,8 @@ document.getElementById("stop").onclick=function(){
 
 
 function resetTimer(timerNow,timerSet){
-  if(timerNow=timerSet){
-    if(timerNow="session"){
+  if(timerNow==timerSet){
+    if(timerNow=="session"){
       currentTime=sessionTime*60;
       document.getElementById("timer").innerHTML=currentTime/60+":00";
       
@@ -158,4 +158,4 @@ function clear(){
    document.getElementById("timer").style.background='#48fb47';
   }
 }; 
-});
+
